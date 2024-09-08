@@ -1,0 +1,126 @@
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Background styling */
+#billing-background {
+    background-image: url('BSUTH LOGO.jpeg'); /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.1; /* Faded background effect */
+}
+
+header {
+    background-color: #2a6592;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+main {
+    margin: 50px auto;
+    padding: 30px;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #2a6592;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #2a6592;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #1f4e73;
+}
+
+/* Insurance details section */
+#insurance-details {
+    display: none;
+}
+
+/* Payment list section */
+#payment-list {
+    margin-top: 20px;
+    background-color: #f4f4f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#payment-list div {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Return to Home button */
+#return-home {
+    text-align: center;
+}
+
+#return-home .button {
+    background-color: #ffcc00;
+    color: #2a6592;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#return-home .button:hover {
+    background-color: #ffb300;
+}
+
+footer {
+    background-color: #2a6592;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

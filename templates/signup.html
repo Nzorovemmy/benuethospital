@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPMS - Benue State University Teaching Hospital</title>
+    <link rel="stylesheet" href="{% static 'assets/css/LOGIN.css' %}"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <!-- Background logo filling the entire screen -->
+    <div id="logo-background"></div>
+
+    <header>
+        <!-- Main Heading -->
+        <h1>Benue State University Teaching Hospital</h1>
+        <h2>Electronic Patient Management System (EPMS)</h2>
+    </header>
+
+    <main>
+        <!-- Admin Login Section -->
+        <div class="login-container">
+            <h3>Admin Create Account</h3>
+            <form action="/signup" method="post">
+                {% csrf_token %}
+                <label for="email">Emaill:</label>
+                <input type="email" id="username" name="email" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="password">Password Repeat:</label>
+                <input type="password" id="password" name="password2" required>
+                
+                <button type="submit" id="LAST MANAGEMENT.html">Signup</button>
+            </form>
+        </div>
+    </main>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <footer>
+        <p>&copy; 2024 Benue State University Teaching Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'LOGIN.js' %}"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>

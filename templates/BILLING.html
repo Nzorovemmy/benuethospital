@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Insurance Processing - EPMS</title>
+    <link rel="stylesheet" href="{% static 'assets/css/BILLING.css' %}"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div id="billing-background"></div>
+
+    <header>
+        <h1>Billing & Insurance Processing</h1>
+    </header>
+
+    <main>
+        <!-- Billing Information Form -->
+        <section id="billing-form">
+            <h2>Billing Information</h2>
+            <form id="payment-form" method="post" action="/billing">
+                {% csrf_token %}
+                <label for="patient-name">Patient Name:</label>
+                <input type="text" id="patient-name" placeholder="Enter patient's name" name="name" required>
+
+                <label for="bill-amount">Bill Amount:</label>
+                <input type="text" id="bill-amount" placeholder="Enter bill amount" name="amount" required>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" required>
+                    <option value="cash">Cash</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="insurance">Insurance</option>
+                </select>
+
+                <div id="insurance-details" style="display: none;">
+                    <label for="insurance-provider">Insurance Provider:</label>
+                    <input type="text" id="insurance-provider" placeholder="Enter insurance provider">
+
+                    <label for="insurance-policy">Policy Number:</label>
+                    <input type="text" id="insurance-policy" placeholder="Enter policy number">
+                </div>
+
+                <button type="submit">Process Payment</button>
+            </form>
+        </section>
+
+        <!-- Payment Records -->
+        <section id="payment-records">
+            <h2>Payment History</h2>
+            <div id="payment-list">
+                <!-- Dynamic payment records will appear here -->
+                 {% for payment in payments %}
+                <div style="display: flex; justify-content: space-between; ">
+
+                    <h3>Patient Name: {{payment.name}}</h3>
+                 <p>Amount Paid: {{payment.amount}}</p>
+                </div>
+                 {% endfor %}
+            </div>
+        </section>
+
+        <!-- Return Home Button -->
+        <div id="return-home">
+            <a href="{% url 'home' %}" class="button">Return to Home</a> <!-- Bold and clear "Return to Home" button -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Benue State University Teaching Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'BILLING.js' %}"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>

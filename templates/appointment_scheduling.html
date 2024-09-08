@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduling - EPMS</title>
+    <link rel="stylesheet" href="{% static 'assets/css/APPOINTMENT SCHEDULING.css' %}"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div id="scheduling-background"></div>
+
+    <header>
+        <h1>Appointment Scheduling</h1>
+    </header>
+
+    <main>
+        <!-- Appointment Scheduling Form -->
+        <section id="schedule-appointment">
+            <h2>Schedule an Appointment</h2>
+            <form id="appointment-form" method="post" action="/">
+                {% csrf_token %}
+                <label for="patient-name">Patient Name:</label>
+                <input type="text" id="patient-name" placeholder="Enter patient's name" name="patient_name">
+
+                <label for="appointment-date">Appointment Date:</label>
+                <input type="date" id="appointment-date" name="appointment_date" required>
+
+                <label for="appointment-time">Appointment Time:</label>
+                <input type="time" id="appointment-time" name="appointment_time" required>
+
+                <label for="doctor-name">Doctor's Name:</label>
+                <select name="doctor_name" id="">
+                    {% for doctor in doctors %}
+                    <option value="{{doctor.name}}">{{doctor.name}}</option>
+                    {% endfor %}
+                </select>
+            
+
+                <button type="submit">Schedule Appointment</button>
+            </form>
+        </section>
+
+        <!-- Reschedule or Cancel Appointment -->
+        <section id="reschedule-appointment">
+            <h2>Reschedule or Cancel Appointment</h2>
+            <label for="appointment-search">Search by Patient's Name or Date:</label>
+            <input type="text" id="appointment-search" placeholder="Enter patient's name or appointment date" onkeyup="searchAppointments()">
+
+            <div id="appointment-list">
+                <!-- Dynamic appointment list will appear here -->
+            </div>
+        </section>
+
+        <div id="return-home">
+            <a href="LAST MANAGEMENT.html" class="button">Return to Home</a> <!-- Bold and clear "Return to Home" button -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Benue State University Teaching Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'APPOINTMENT SCHEDULING.js' %}"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>

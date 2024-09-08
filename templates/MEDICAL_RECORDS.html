@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records Management - EPMS</title>
+    <link rel="stylesheet" href="{% static 'assets/css/MEDICAL RECORDS.css' %}"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div id="records-background"></div>
+
+    <header>
+        <h1>Medical Records Management</h1>
+    </header>
+
+    <main>
+        <!-- Search bar for patient records -->
+        <section>
+            <label for="search-bar">Search Patient by Name or Phone Number:</label>
+            <input type="text" id="search-bar" placeholder="Enter patient name or phone number..." onkeyup="searchPatient()">
+        </section>
+
+        <section>
+            <h2>List of Registered Patients</h2>
+
+            <table id="patients-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Medical History</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Patient records will be dynamically loaded here -->
+                    {% for patient in patients reversed %}
+                    <tr>
+                        <td>{{patient.name}}</td>
+                        <td>{{patient.age}}</td>
+                        <td>{{patient.sex}}</td>
+                        <td>{{patient.address}}</td>
+                        <td>{{patient.phone}}</td>
+                        <td>{{patient.email}}</td>
+                        <td>{{patient.medical_history}}</td>
+                        
+                     </tr>
+                    
+                   {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <div id="return-home">
+            <a href="{% url 'home' %}" class="button">Return to Home</a> <!-- Bold and clear "Return to Home" button -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Benue State University Teaching Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'MEDICAL RECORDS.js' %}"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>

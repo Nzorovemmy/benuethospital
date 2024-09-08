@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Patient - EPMS</title>
+    <link rel="stylesheet" href="{% static 'assets/css/PATIENT.css' %}"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <div id="register-background"></div>
+
+    <header>
+        <h1>Register Patient</h1>
+    </header>
+    <main>
+        <form id="register-patient-form" action="/patient" method="post">
+            {% csrf_token %}
+            <h2>Patient Registration Form</h2>
+            
+            <label for="patient-name">Patient Name:</label>
+            <input type="text" id="patient-name" name="patient-name" required>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="medical-history">Medical History:</label>
+            <textarea id="medical-history" name="medical-history"></textarea>
+
+            <input type="submit" value="Register Patient">
+        </form>
+        
+        <div id="return-home">
+            <a href="{% url 'home' %}" class="button">Return to Home</a> <!-- Bold and clear "Return to Home" button -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Benue State University Teaching Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'PATIENT.js' %}"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>

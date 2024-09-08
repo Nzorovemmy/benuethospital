@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPMS - Benue State University Teaching Hospital</title>
+    <link rel="stylesheet" href="{% static 'assets/css/LAST MANAGEMENT.css' %}"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <!-- Background logo filling the entire screen -->
+    <div id="logo-background"></div>
+
+    <header>
+        <!-- Main Heading and Navigation -->
+        <h1>Benue State University Teaching Hospital Electronic Patient Management System (EPMS)</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'patient' %}">Register Patient</a></li>
+                <li><a href="{% url 'medical-records' %}">Medical Records Management</a></li>
+                <li><a href="{% url 'make-appointment' %}">Appointment Scheduling</a></li>
+                <li><a href="{% url 'billing' %}">Billing and Insurance Processing</a></li>
+                <li><a href="{% url 'treatment-care' %}">Treatment and Care Tracking</a></li>
+                <li><a href="{% url 'Logout' %}" id="logout-btn">Log Out</a></li> <!-- Log Out Button -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="greeting-message">Welcome to the Electronic Patient Management System (EPMS)</h2>
+        <p>Use the navigation menu to access the various patient management services:</p>
+        <ul>
+            <li><strong>Register Patient:</strong> Add new patients and store their basic information.</li>
+            <li><strong>Medical Records Management:</strong> Access and update patient medical records.</li>
+            <li><strong>Appointment Scheduling:</strong> Schedule, reschedule, or cancel patient appointments.</li>
+            <li><strong>Billing and Insurance Processing:</strong> Manage patient billing, payments, and insurance claims.</li>
+            <li><strong>Treatment and Care Tracking:</strong> Track patient treatments, care plans, and follow-ups.</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Benue State University Teaching Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'LAST MANAGEMENT.js' %}"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>

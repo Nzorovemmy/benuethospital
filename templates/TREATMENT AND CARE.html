@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment and Care Tracking - EPMS</title>
+    <link rel="stylesheet" href="{% static 'assets/css/TREATMENT AND CARE.css' %}"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div id="treatment-background"></div>
+
+    <header>
+        <h1>Treatment and Care Tracking</h1>
+    </header>
+
+    <main>
+        <!-- Treatment Information Form -->
+        <section id="treatment-form">
+            <h2>Record New Treatment</h2>
+            <form id="care-form">
+                <label for="patient-name">Patient Name:</label>
+                <input type="text" id="patient-name" placeholder="Enter patient's name" required>
+
+                <label for="treatment-plan">Treatment Plan:</label>
+                <textarea id="treatment-plan" placeholder="Enter treatment details" required></textarea>
+
+                <label for="care-status">Care Status:</label>
+                <select id="care-status" required>
+                    <option value="ongoing">Ongoing</option>
+                    <option value="completed">Completed</option>
+                    <option value="follow-up">Follow-up Needed</option>
+                </select>
+
+                <label for="care-notes">Care Notes:</label>
+                <textarea id="care-notes" placeholder="Enter any relevant care notes or observations"></textarea>
+
+                <button type="submit">Add Treatment</button>
+            </form>
+        </section>
+
+        <!-- Ongoing Treatments -->
+        <section id="ongoing-treatments">
+            <h2>Ongoing Treatments and Care</h2>
+            <div id="treatment-list">
+                <!-- Dynamic list of treatments will appear here -->
+            </div>
+        </section>
+
+        <!-- Return Home Button -->
+        <div id="return-home">
+            <a href="{% url 'home' %}" class="button">Return to Home</a> <!-- Bold and clear "Return to Home" button -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Benue State University Teaching Hospital. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'TREATMENT AND CARE.js' %}"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
